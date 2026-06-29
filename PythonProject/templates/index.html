@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест на тип мышления</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1> Тест на тип мышления</h1>
+
+    <p class="subtitle">
+        Узнай, какой тип мышления преобладает именно у тебя.
+    </p>
+
+    <a href="{{ url_for('quiz') }}">
+        <button>Начать тест</button>
+    </a>
+
+</div>
+
+</body>
+</html>

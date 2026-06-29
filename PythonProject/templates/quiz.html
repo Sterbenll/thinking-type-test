@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Тест на тип мышления</h1>
+
+<form method="POST">
+
+{% for q in questions %}
+
+{% set question_index = loop.index0 %}
+
+<div class="question">
+
+<h3>{{ q.question }}</h3>
+
+{% for answer in q.answers %}
+
+<label>
+    <input
+        type="radio"
+        name="q{{ question_index }}"
+        value="{{ answer }}"
+        required>
+
+    {{ answer }}
+</label>
+
+{% endfor %}
+
+</div>
+
+{% endfor %}
+
+<button type="submit">Узнать результат</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

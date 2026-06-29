@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ваш результат</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container result">
+
+    <h1>🎉 Ваш результат</h1>
+
+    <h2>{{ title }}</h2>
+
+    <p class="description">
+        {{ text }}
+    </p>
+
+    <div class="stats">
+
+        <h3> Распределение ответов</h3>
+
+        <div class="progress">
+            <div class="label">
+                <span> Аналитическое</span>
+                <span>{{ stats.a }}/10</span>
+            </div>
+
+            <div class="bar">
+                <div class="fill a" style="width: {{ stats.a * 10 }}%;"></div>
+            </div>
+        </div>
+
+        <div class="progress">
+            <div class="label">
+                <span> Творческое</span>
+                <span>{{ stats.b }}/10</span>
+            </div>
+
+            <div class="bar">
+                <div class="fill b" style="width: {{ stats.b * 10 }}%;"></div>
+            </div>
+        </div>
+
+        <div class="progress">
+            <div class="label">
+                <span>🛠 Практическое</span>
+                <span>{{ stats.c }}/10</span>
+            </div>
+
+            <div class="bar">
+                <div class="fill c" style="width: {{ stats.c * 10 }}%;"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <a href="{{ url_for('quiz') }}">
+            <button> Пройти ещё раз</button>
+        </a>
+
+        <a href="{{ url_for('index') }}">
+            <button> На главную</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
